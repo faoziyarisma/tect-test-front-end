@@ -1,0 +1,57 @@
+{
+  "name": "tcm-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplikasi Back-End Toll Collection Management DataLake PT Jasa Marga",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon --max-old-space-size=8096 ./bin/www",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "seed": "npx sequelize-cli db:seed:all",
+    "migrate-and-seed": "npm run migrate:reset && npm run seed"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faoziyarisma/tech-test-back-end.git"
+  },
+  "author": "Risma Faoziya",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "connect-timeout": "^1.9.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.5",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.4.0",
+    "express": "^4.19.2",
+    "express-router-group": "^0.1.4",
+    "express-validator": "^7.1.0",
+    "fs": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.3",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "prettier": "^3.3.1",
+    "pug": "^3.0.3",
+    "redis": "^4.6.14",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "sequelize-cli": "^6.6.2",
+    "supertest": "^7.0.0"
+  }
+}
